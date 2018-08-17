@@ -31,19 +31,11 @@ class ListSearch extends React.Component {
 
     render() {
         return (
-            <div className="row search-wrap">
-                <div className="col-md-12">
+            <div className="row search-wrap" style={{textAlign:'center'}}>
+                <div className="col-md-12" style={{marginTop:'15px'}}>
                     <div className="form-inline">
                         <div className="form-group">
-                            <select className="form-control"
-                                    name="searchType"
-                                    onChange={(e)=>this.onValueChange(e)}>
-                                <option value="productId">按商品ID查询</option>
-                                <option value="productName">按商品名称查询</option>
-                            </select>
-                        </div>
-                        <div className="form-group">
-                            <input type="text" className="form-control" placeholder="关键词"
+                            <input type="text" className="form-control" placeholder="请输入关键词或商品ID"
                                    name="searchKeyword"
                                    onKeyUp={(e)=>this.onSearchKeywordKeyUp(e)}
                                    onChange={(e)=>this.onValueChange(e)}/>

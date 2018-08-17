@@ -112,7 +112,6 @@ class ProductList extends React.Component {
                 }}/>
                 <TableList tableHeads={tableHeads}>
                     {
-
                         this.state.list.map((product, index) => {
                             return (
                                 <tr key={index}>

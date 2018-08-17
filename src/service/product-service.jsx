@@ -6,28 +6,24 @@ class Product
     //获取商品列表
    getProductList(listParam)
     {
+
+        console.log(listParam)
         let url = '',
             data={};
         if(listParam.listType==='list'){
             url='/manage/product/list.do';
             data.pageNum =listParam.pageNum;
         }else if (listParam.listType==='search'){
-            if(listParam.Keyword===!isNaN) {
-                url = '/manage/product/search.do?productId='+ listParam.Keyword;
+               console.log(listParam.Keyword);
+               console.log(isNaN(listParam.Keyword)?'productName':'productId');
+                url ='/manage/product/search.do?'+(isNaN(listParam.Keyword)?'productName='+ listParam.Keyword:'productId='+ listParam.Keyword);
                 data.pageNum = listParam.pageNum;
                 data[listParam.searchType] = listParam.Keyword;
-            }else{
-                url = '/manage/product/search.do?productName='+ listParam.Keyword;
-                data.pageNum = listParam.pageNum;
-                data[listParam.searchType] = listParam.Keyword;
-                console.log(listParam.Keyword);
-            }
         }
-
         return _mm.request(
             {
-                type :'get',
-                url:url,
+                 type :'get',
+                 url:url,
                  data:data
             });
     }

@@ -9,8 +9,6 @@ class Pagination extends React.Component
     }
     render()
     {
-        console.log(this.props)
-
         return(
             <div className="row" style={{float:'right'}}>
                 <div className="col-md-12">
