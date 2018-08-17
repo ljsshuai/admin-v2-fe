@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .hover{
+            display: block;
+            width: 80px;
+            line-height: 30px;
+            height: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+        .hover:hover{
+            overflow: visible;
+        }
+        .hover .ex{
+            position: absolute;
+            left: 80px;
+            top: 0;
+            width: 200px;
+            line-height: 60px;
+            background: #ff0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<a class="hover" href="#">
+    <span>鼠标</span>
+    <div class="ex">
+        我是伸展出来的东西.
+    </div>
+</a>
+</body>
+</html>
