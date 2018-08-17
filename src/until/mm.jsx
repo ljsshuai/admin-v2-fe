@@ -29,7 +29,7 @@ class Mutil {
 
     //跳转登陆
     doLogin() {
-        window.location.href = '/login ? redirect=' + encodeURIComponent(window.location.pathname);
+        window.location.href = '/login?redirect=' + decodeURIComponent(window.location.pathname);
     }
     //获取url参数
     getUrlParam(name) {

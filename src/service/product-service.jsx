@@ -12,15 +12,16 @@ class Product
             url='/manage/product/list.do';
             data.pageNum =listParam.pageNum;
         }else if (listParam.listType==='search'){
-            url='/manage/product/search.do?productId='+listParam.Keyword+'&';
-             data.pageNum =listParam.pageNum;
-             data[listParam.searchType]=listParam.Keyword;
-            // console.log(listParam)
-            // console.log(data,999)
-        }else if (listParam.listType==='search') {
-            url = '/manage/product/search.do?productName=' + listParam.Keyword + '&';
-            data.pageNum = listParam.pageNum;
-            data[listParam.searchType] = listParam.Keyword;
+            if(listParam.Keyword===!isNaN) {
+                url = '/manage/product/search.do?productId='+ listParam.Keyword;
+                data.pageNum = listParam.pageNum;
+                data[listParam.searchType] = listParam.Keyword;
+            }else{
+                url = '/manage/product/search.do?productName='+ listParam.Keyword;
+                data.pageNum = listParam.pageNum;
+                data[listParam.searchType] = listParam.Keyword;
+                console.log(listParam.Keyword);
+            }
         }
 
         return _mm.request(

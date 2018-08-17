@@ -50,7 +50,7 @@ class Login extends React.Component{
                 _mm.errorTips(errMsg);
             });
         }
-        //杨正不通过
+        //验证不通过
         else
         {
             _mm.errorTips(checkResult.msg);

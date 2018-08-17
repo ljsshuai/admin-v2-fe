@@ -49,9 +49,7 @@ class ProductList extends React.Component {
     }
     //搜索
     onSearch(searchType, searchKeyword) {
-        console.log(searchType,searchKeyword);
         let listType = searchKeyword === '' ?'list' : 'search';
-        console.log(searchType, searchKeyword)
         this.setState({
             listType: listType,
             pageNum: 1,
